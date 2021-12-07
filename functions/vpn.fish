@@ -86,6 +86,8 @@ end
 
 function vpn --argument-names arg --description "Manage WireGuard connections for AzireVPN"
     switch "$arg"
+        case version
+            echo "vpn, version $vpn_version"
         case help
             _vpn_print_help
         case ls
