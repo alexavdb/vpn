@@ -2,6 +2,8 @@
 
 An elegant command-line interface for AzireVPN’s WireGuard service for the [Fish shell](https://fishshell.com/).
 
+![Screenshot](screenshot.png)
+
 ## Install
 
 TODO
