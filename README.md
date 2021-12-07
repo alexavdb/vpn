@@ -1,6 +1,6 @@
 # vpn
 
-An elegant command-line interface for AzireVPN’s WireGuard service for the Fish shell.
+An elegant command-line interface for AzireVPN’s WireGuard service for the [Fish shell](https://fishshell.com/).
 
 ## Install
 
