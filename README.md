@@ -104,3 +104,5 @@ Sample output:
 This is a Fish shell alternative inspired by [Aral Balkan's original application.](https://source.small-tech.org/aral/vpn).
 
 ## License
+
+[GPL-3.0-or-later](https://www.gnu.org/licenses/gpl-3.0.html)
