@@ -23,12 +23,11 @@ set --global _vpn_azirevpn_locations\
     'us2' 'us2' 'USA (Chicago)'\
     'us3' 'us3' 'USA (New York)'
 
-
 # Modified from https://stackoverflow.com/a/69865337
 # arg is the string to search for in locations
 # init is the index where search should be started
 # inc is an integer used to get the index of the element to return if a match for arg is found
-function _vpn_extract_from_locations -a arg init inc
+function _vpn_extract_from_locations --argument-names arg init inc
     set -l keyseq (seq $init 3 (count $_vpn_azirevpn_locations))
     # we can't simply use `contains` because it won't distinguish keys from values
     for idx in $keyseq
@@ -40,14 +39,14 @@ function _vpn_extract_from_locations -a arg init inc
     return 1
 end
 
-function _vpn_code_to_argument -a code
+function _vpn_code_to_argument --argument-names code
     _vpn_extract_from_locations $code 1 1
 end
 
-function _vpn_code_to_string -a code
+function _vpn_code_to_string --argument-names code
     _vpn_extract_from_locations $code 1 2
 end
 
-function _vpn_argument_to_code -a arg
+function _vpn_argument_to_code --argument-names arg
     _vpn_extract_from_locations $arg 2 -1
 end

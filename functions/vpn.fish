@@ -40,7 +40,7 @@ function _vpn_status
     end
 end
 
-function _vpn_connect -a location
+function _vpn_connect --argument-names location
     # If no location was provided fall back to default
     if test -z "$location"
         set location 'netherlands'
@@ -86,7 +86,7 @@ function _vpn_disconnect
     end
 end
 
-function _vpn_wireguard_action -a action server
+function _vpn_wireguard_action --argument-names action server
     set server (string join '' "azirevpn-" $server)
     command wg-quick $action $server > /dev/null 2>&1
     return $status
