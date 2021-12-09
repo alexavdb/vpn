@@ -6,9 +6,13 @@ An elegant command-line interface for AzireVPN’s WireGuard service for the [Fi
 
 ## Install
 
-TODO
+[Fisher](https://github.com/jorgebucaran/fisher)
 
-## Use
+```sh
+fisher install https://gitlab.com/mastemah/azirevpn-fish.git
+```
+
+## Usage
 
 ### Connect to the default server
 
