@@ -20,12 +20,18 @@ function _vpn_print_locations
     echo -e "$output" | column -t -s ===
 end
 
-function _vpn_status
-    #TODO: extract to function or pass as argument
-    set -l current_connection (ifconfig | string match -r '^azirevpn-(?:\w|-)+' | string sub -s 10)
+function _vpn_current_location
+    set -l loc (ifconfig | string match -r '^azirevpn-(?:\w|-)+' | string sub -s 10)
+    if test -n "$loc"
+        echo $loc
+    else
+        return 1
+    end
+end
 
-    if test -n "$current_connection"
-        set -l loc (_vpn_code_to_string $current_connection)
+function _vpn_status
+    if set -l current_location (_vpn_current_location)
+        set -l loc (_vpn_code_to_string $current_location)
         echo -e " ✅ You are connected to AzireVPN in $loc via WireGuard."
         return 0
     else
@@ -42,11 +48,8 @@ function _vpn_connect -a location
 
     set -l code (_vpn_argument_to_code $location)
     if test -n "$code"
-        #TODO: extract to function or pass as argument
-        set -l current_connection (ifconfig | string match -r '^azirevpn-(?:\w|-)+' | string sub -s 10)
-
-        if test -n "$current_connection"
-            set -l loc (_vpn_code_to_string $current_connection)
+        if set -l current_location (_vpn_current_location)
+            set -l loc (_vpn_code_to_string $current_location)
             echo -e " ✅ You are already connected to AzireVPN in $loc."
             _vpn_disconnect
         end
@@ -59,17 +62,13 @@ function _vpn_connect -a location
         echo -e "❌ Incorrect location argument, use \"vpn ls\" to list all valid arguments."
         return 1
     end
-
 end
 
 function _vpn_disconnect
-    #TODO: extract to function or pass as argument
-    set -l current_connection (ifconfig | string match -r '^azirevpn-(?:\w|-)+' | string sub -s 10)
-
-    if test -n "$current_connection"
-        set -l loc (_vpn_code_to_string $current_connection)
+    if set -l current_location (_vpn_current_location)
+        set -l loc (_vpn_code_to_string $current_location)
         echo -e " 👋 Disconnecting from AzireVPN in $loc…"
-        _vpn_wireguard_action 'down' $current_connection
+        _vpn_wireguard_action 'down' $current_location
     else
         echo -e " ❌ You are not connected to AzireVPN via WireGuard."
         return 1
@@ -93,7 +92,7 @@ function vpn --argument-names arg --description "Manage WireGuard connections fo
         case ls
             _vpn_print_locations
         case status
-            _vpn_status $current_connection
+            _vpn_status
         case off
             _vpn_disconnect
         case '*'
