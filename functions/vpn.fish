@@ -59,7 +59,7 @@ function _vpn_connect -a location
         _vpn_wireguard_action 'up' $code
         echo " ✅ Done."
     else
-        echo -e "❌ Incorrect location argument, use \"vpn ls\" to list all valid arguments."
+        echo -e "❌ Incorrect location argument \"$location\", use \"vpn ls\" to list all valid arguments."
         return 1
     end
 end
