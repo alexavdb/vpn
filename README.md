@@ -8,8 +8,8 @@ An elegant command-line interface for AzireVPN’s WireGuard service for the [Fi
 
 [Fisher](https://github.com/jorgebucaran/fisher)
 
-```sh
-fisher install https://gitlab.com/mastemah/azirevpn-fish.git
+```console
+TODO
 ```
 
 ## Usage
