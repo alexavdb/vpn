@@ -2,8 +2,8 @@ function _vpn_print_help
     echo " Usage: vpn [location]    Turn on VPN and connect to default/specified location."
     echo "        vpn off           Turn VPN off."
     echo "        vpn ls            List supported locations and location codes."
-    echo "        vpn status         Display the current connection status."
-    echo "        vpn help           Display this help screen."
+    echo "        vpn status        Display the current connection status."
+    echo "        vpn help          Display this help screen."
 end
 
 function _vpn_print_locations
