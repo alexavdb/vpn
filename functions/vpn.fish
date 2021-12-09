@@ -56,8 +56,13 @@ function _vpn_connect -a location
 
         set -l loc (_vpn_code_to_string $code)
         echo -e " 📡 Connecting to AzireVPN in $loc…"
-        _vpn_wireguard_action 'up' $code
-        echo " ✅ Done."
+        if _vpn_wireguard_action 'up' $code
+            echo " ✅ Done."
+            return 0
+        else
+            echo " ❌ An error occured while executing the Wireguard command."
+            return 1
+        end
     else
         echo -e "❌ Incorrect location argument \"$location\", use \"vpn ls\" to list all valid arguments."
         return 1
@@ -68,19 +73,23 @@ function _vpn_disconnect
     if set -l current_location (_vpn_current_location)
         set -l loc (_vpn_code_to_string $current_location)
         echo -e " 👋 Disconnecting from AzireVPN in $loc…"
-        _vpn_wireguard_action 'down' $current_location
+        if _vpn_wireguard_action 'down' $current_location
+            echo " ✅ Done."
+            return 0
+        else
+            echo " ❌ An error occured while executing the Wireguard command."
+            return 1
+        end
     else
         echo -e " ❌ You are not connected to AzireVPN via WireGuard."
         return 1
     end
-
-    echo " ✅ Done."
 end
 
 function _vpn_wireguard_action -a action server
     set server (string join '' "azirevpn-" $server)
     command wg-quick $action $server > /dev/null 2>&1
-    # TODO: deal with errors with running wg-quick
+    return $status
 end
 
 function vpn --argument-names arg --description "Manage WireGuard connections for AzireVPN"

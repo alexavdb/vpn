@@ -1,4 +1,4 @@
-set --global vpn_version 1.1.0
+set --global vpn_version 1.2.0
 
 # Server information as an improvised dictionary with two values for each key
 # 'AzireVPN server code' 'script argument' 'location string'
