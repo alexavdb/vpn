@@ -9,7 +9,7 @@ An elegant command-line interface for AzireVPN’s WireGuard service for the [Fi
 [Fisher](https://github.com/jorgebucaran/fisher)
 
 ```console
-TODO
+fisher install alexavdb/vpn 
 ```
 
 ## Usage
