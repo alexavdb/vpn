@@ -41,10 +41,6 @@ function _vpn_extract_from_locations --argument-names arg init inc
     return 1
 end
 
-function _vpn_code_to_argument --argument-names code
-    _vpn_extract_from_locations $code 1 1
-end
-
 function _vpn_code_to_string --argument-names code
     _vpn_extract_from_locations $code 1 2
 end
