@@ -1,27 +1,29 @@
 set --global vpn_version 1.2.0
 
+set _vpn_code_prefix 'azirevpn'
+
 # Server information as an improvised dictionary with two values for each key
 # 'AzireVPN server code' 'script argument' 'location string'
 set --global _vpn_azirevpn_locations\
-    'ca1' 'canada' 'Canada (Toronto)'\
-    'ch1' 'switzerland' 'Switzerland (Zurich)'\
-    'de-ber' 'germany' 'Germany (Berlin)'\
-    'de1' 'germany2' 'Germany (Frankfurt)'\
-    'dk1' 'denmark' 'Denmark (Copenhagen)'\
-    'es1' 'spain' 'Spain (Madrid)'\
-    'es2' 'spain2' 'Spain (Málaga)'\
-    'fr1' 'france' 'France (Paris)'\
-    'it1' 'italy' 'Italy (Milan)'\
-    'nl1' 'netherlands' 'Netherlands (Amsterdam)'\
-    'no1' 'norway' 'Norway (Oslo)'\
-    'ro1' 'romania' 'Romania (Bucharest)'\
-    'se1' 'sweden' 'Sweden (Stockholm)'\
-    'se2' 'sweden2' 'Sweden (Gothenburg)'\
-    'th1' 'thailand' 'Thailand (Phuket)'\
-    'uk1' 'uk' 'UK (London)'\
-    'us1' 'us' 'USA (Miami)'\
-    'us2' 'us2' 'USA (Chicago)'\
-    'us3' 'us3' 'USA (New York)'
+    "$_vpn_code_prefix-ca1" "canada" "Canada (Toronto)"\
+    "$_vpn_code_prefix-ch1" "switzerland" "Switzerland (Zurich)"\
+    "$_vpn_code_prefix-de-ber" "germany" "Germany (Berlin)"\
+    "$_vpn_code_prefix-de1" "germany2" "Germany (Frankfurt)"\
+    "$_vpn_code_prefix-dk1" "denmark" "Denmark (Copenhagen)"\
+    "$_vpn_code_prefix-es1" "spain" "Spain (Madrid)"\
+    "$_vpn_code_prefix-es2" "spain2" "Spain (Málaga)"\
+    "$_vpn_code_prefix-fr1" "france" "France (Paris)"\
+    "$_vpn_code_prefix-it1" "italy" "Italy (Milan)"\
+    "$_vpn_code_prefix-nl1" "netherlands" "Netherlands (Amsterdam)"\
+    "$_vpn_code_prefix-no1" "norway" "Norway (Oslo)"\
+    "$_vpn_code_prefix-ro1" "romania" "Romania (Bucharest)"\
+    "$_vpn_code_prefix-se1" "sweden" "Sweden (Stockholm)"\
+    "$_vpn_code_prefix-se2" "sweden2" "Sweden (Gothenburg)"\
+    "$_vpn_code_prefix-th1" "thailand" "Thailand (Phuket)"\
+    "$_vpn_code_prefix-uk1" "uk" "UK (London)"\
+    "$_vpn_code_prefix-us1" "us" "USA (Miami)"\
+    "$_vpn_code_prefix-us2" "us2" "USA (Chicago)"\
+    "$_vpn_code_prefix-us3" "us3" "USA (New York)"
 
 # Modified from https://stackoverflow.com/a/69865337
 # arg is the string to search for in locations

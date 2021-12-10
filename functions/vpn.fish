@@ -21,7 +21,7 @@ function _vpn_print_locations
 end
 
 function _vpn_current_location
-    set -l loc (ip link | string match -r 'azirevpn-(?:\w|-)+' | string sub -s 10)
+    set -l loc (ip link | string match -r 'azirevpn-(?:\w|-)+')
     if test -n "$loc"
         echo $loc
     else
@@ -87,7 +87,6 @@ function _vpn_disconnect
 end
 
 function _vpn_wireguard_action --argument-names action server
-    set server (string join '' "azirevpn-" $server)
     command wg-quick $action $server > /dev/null 2>&1
     return $status
 end
