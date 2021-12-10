@@ -1,4 +1,4 @@
-set --global vpn_version 1.2.0
+set --global vpn_version 1.3.0
 
 set _vpn_code_prefix 'azirevpn'
 
