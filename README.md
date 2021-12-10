@@ -35,7 +35,7 @@ Clone this repository and copy the files in the `conf.d` and `functions` folders
 Sample output:
 
 ```
- 📡 Connecting to AzireVPN in Netherlands (Amsterdam)…
+ 📡 Connecting to AzireVPN in Netherlands (Amsterdam)...
  ✅ Done.
 ```
 
@@ -48,9 +48,10 @@ Sample output:
 Sample output:
 
 ```
- ✅ You are already connected to AzireVPN in Netherlands (Amsterdam).
- 👋 Disconnecting from AzireVPN in Netherlands (Amsterdam)…
- 📡 Connecting to AzireVPN in Germany (Berlin)…
+ ✅ You are already connected to AzireVPN in Netherlands (Amsterdam) via WireGuard.
+ 👋 Disconnecting from AzireVPN in Netherlands (Amsterdam)...
+ ✅ Done.
+ 📡 Connecting to AzireVPN inGermany (Berlin)...
  ✅ Done.
 ```
 
@@ -63,29 +64,29 @@ Sample output:
 Sample output:
 
 ```
-Currently supported locations and their corresponding argument:
+ Currently supported locations and their corresponding argument:
 
-Location                     Argument
-───────────────────────      ───────────
-Canada (Toronto)             canada
-Switzerland (Zurich)         switzerland
-Germany (Berlin)             germany
-Germany (Frankfurt)          germany2
-Denmark (Copenhagen)         denmark
-Spain (Madrid)               spain
-Spain (Málaga)               spain2
-France (Paris)               france
-Italy (Milan)                italy
-Netherlands (Amsterdam)      netherlands
-Norway (Oslo)                norway
-Romania (Bucharest)          romania
-Sweden (Stockholm)           sweden
-Sweden (Gothenburg)          sweden2
-Thailand (Phuket)            thailand
-UK (London)                  uk
-USA (Miami)                  us
-USA (Chicago)                us2
-USA (New York)               us3
+ Location                     Argument
+ ----------------------       -----------
+ Canada (Toronto)             canada
+ Switzerland (Zurich)         switzerland
+ Germany (Berlin)             germany
+ Germany (Frankfurt)          germany2
+ Denmark (Copenhagen)         denmark
+ Spain (Madrid)               spain
+ Spain (Málaga)               spain2
+ France (Paris)               france
+ Italy (Milan)                italy
+ Netherlands (Amsterdam)      netherlands
+ Norway (Oslo)                norway
+ Romania (Bucharest)          romania
+ Sweden (Stockholm)           sweden
+ Sweden (Gothenburg)          sweden2
+ Thailand (Phuket)            thailand
+ UK (London)                  uk
+ USA (Miami)                  us
+ USA (Chicago)                us2
+ USA (New York)               us3
 ```
 
 ### Disconnect
@@ -97,7 +98,7 @@ USA (New York)               us3
 Sample output:
 
 ```
- 👋 Disconnecting from AzireVPN in Germany (Berlin)…
+ 👋 Disconnecting from AzireVPN in Germany (Berlin)...
  ✅ Done.
 ```
 
