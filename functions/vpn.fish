@@ -39,7 +39,7 @@ end
 
 function _vpn_connect --argument-names location
     if test -z "$location"
-        set location 'netherlands'
+        set location netherlands
     end
 
     set -l code (_vpn_argument_to_code $location)
@@ -50,7 +50,7 @@ function _vpn_connect --argument-names location
         end
 
         echo -e " 📡 Connecting to AzireVPN in "(_vpn_code_to_string $code)"..."
-        _vpn_wireguard_action 'up' $code
+        _vpn_wireguard_action up $code
     else
         echo -e " ❌ Incorrect location argument \"$location\", use \"vpn ls\" to list all valid arguments."
         return 121
@@ -60,7 +60,7 @@ end
 function _vpn_disconnect
     if set -l current_location (_vpn_current_location)
         echo -e " 👋 Disconnecting from AzireVPN in "(_vpn_code_to_string $current_location)"..."
-        _vpn_wireguard_action 'down' $current_location
+        _vpn_wireguard_action down $current_location
     else
         echo -e " ❌ You are not connected to AzireVPN via WireGuard."
         return 1
@@ -68,7 +68,7 @@ function _vpn_disconnect
 end
 
 function _vpn_wireguard_action --argument-names action server
-    if command wg-quick $action $server > /dev/null 2>&1
+    if command wg-quick $action $server >/dev/null 2>&1
         echo " ✅ Done."
         return 0
     else
