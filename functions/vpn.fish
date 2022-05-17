@@ -68,7 +68,7 @@ function _vpn_disconnect
 end
 
 function _vpn_wireguard_action --argument-names action server
-    if command wg-quick $action $server >/dev/null 2>&1
+    if command --quiet wg-quick $action $server
         echo " ✅ Done."
         return 0
     else
